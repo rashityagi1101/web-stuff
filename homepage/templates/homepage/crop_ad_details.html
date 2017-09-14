@@ -1,0 +1,141 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>ad</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<p> farmer will see all crop ad details received here </p>-->
+
+<!--<br>-->
+<!--{% for p in posts %}-->
+<!--<br>-->
+
+<!--<ol> sent by retailer : {{ p.retailer_details }}</ol>-->
+<!--<ol> crop : {{ p.crop_details }}</ol>-->
+<!--<ol> qty : {{ p.qty_details }}</ol>-->
+<!--<ol> status : {{ p.status_update }}</ol>-->
+<!--<br>-->
+<!--<h3>-->
+
+<!--<a href="{% url 'sell_crop' %}" > click here to sell to this retailer  </a>-->
+
+<!--</h3>-->
+<!--<br>-->
+
+<!--{% endfor %}-->
+<!--<br>-->
+<!--<a href="{% url 'farmer_dash' %}"> go back</a>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link href="{% static 'homepage/tablecss.css' %}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body {
+       /* background-image: url("On-the-green-blurred-background.jpg");*/
+
+}
+
+.topnav{
+position: relative;
+/*left: 575px;
+margin-top: 50px;*/
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #1b6d85;
+}
+
+.topnav a {
+  float: left;
+
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 22px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.topnav a:hover {
+  background-color: #1b6d85 ;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #1b6d85;
+    color: white;
+}
+
+
+
+    .activee{
+        margin-left: 80%;
+    }
+</style>
+</head>
+
+<body  id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+<div class="topnav">
+     <a  href="{% url 'farmerlogoutt' %}">Logout</a>
+    <a class="activee" href="{% url 'farmer_dash' %}"> {{ user }}  </a>
+
+ </div>
+ <div style="padding-right: 18px"></div>
+<section>
+  <!--for demo wrap-->
+  <h1>Retailer Advertisements</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+
+          <th>RETAILER</th>
+          <th>CROPS</th>
+          <th>Qty Required</th>
+          <th>Sell crop</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+          {% for p in posts %}
+        <tr>
+
+          <td>{{ p.retailer_details }}</td>
+          <td>{{ p.crop_details }}</td>
+          <td>{{ p.qty_details }}</td>
+            {%  if  p.status_update  == False %}
+             <td><button onclick="window.location.href='sell_crop'" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">sell</button></td>
+            {% else %}
+             <td>sold</td> <!-- {% comment %}<td><button  onclick="window.location.href=''" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sold</button></td>{% endcomment %}-->
+            {% endif %}
+        </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</body>
+</html>

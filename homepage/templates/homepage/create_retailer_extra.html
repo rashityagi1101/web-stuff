@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>retailer extra</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<a href="{% url 'create_retailer' %}">now register as a retailer :] </a>-->
+
+
+<!--</body>-->
+<!--</html>-->
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link href="{% static 'homepage/style.css' %}" rel="stylesheet">
+    <style>
+        .aboutvideo{
+            margin-left: 30%;
+            margin-top: 4%;
+
+        }
+        .k{
+            background-color: #1b6d85;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 4px;
+    cursor: pointer;
+    width: 15%;
+    margin-top: 2%;
+    margin-left: 38%;
+
+        }
+        .bo{
+            background-image: url('{% static "homepage/images/blur.jpe" %}');
+            background-size: 100%;
+        }
+        .activee{
+            margin-left: 84%;
+        }
+    </style>
+</head>
+
+<body id="myPage" class="bo" data-spy="scroll" data-target=".navbar" data-offset="60" >
+<div class="topnav">
+  <a href="/index">Home</a>
+  <a class="activee">{{ user }}</a>
+ </div>
+ <div style="padding-right: 18px"></div>
+<br>
+  <iframe class="aboutvideo" width="420" height="345" src="https://www.youtube.com/embed/JdGd4YBN1CE">
+</iframe>
+<br>
+         <button class="k" onclick="window.location.href='/create_retailer'" type="button" >Register Retailer</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

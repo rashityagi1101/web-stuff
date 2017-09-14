@@ -1,0 +1,311 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Farmer </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="{% static 'homepage/css/bootstrap-responsive.css' %}" rel="stylesheet">
+<link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'homepage/color/default.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/color/default.css' %}" rel="stylesheet">
+<link rel="shortcut icon" href="{% static 'homepage/images/favicon.ico' %}">
+
+
+</head>
+<body>
+<!-- navbar -->
+<div class="navbar-wrapper">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<!-- Responsive navbar -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a>
+				<h1 class="brand"><a href="index.html">Farming Website</a></h1>
+				<!-- navigation -->
+				<nav class="pull-right nav-collapse collapse">
+				<ul id="menu-main" class="nav">
+					<li><a  title="home" href="{% url 'index' %}">Home</a></li>
+					<li><a title="About" href="#about">About_us</a></li>
+					<li><a title="Register" href="{% url 'registerpage' %}">Register</a></li>
+					<li><a title="news" href="#news">News</a></li>
+					<li><a title="services" href="#services">Services</a></li>
+
+
+				</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Header area -->
+<div id="header-wrapper" class="header-slider">
+	<header class="clearfix">
+	<br>
+	<br>
+	<br>
+
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div id="main-flexslider" class="flexslider">
+					<ul class="slides">
+						<li>
+						<p class="home-slide-content">
+							Make your deals the <strong>easy</strong>way
+						</p>
+						</li>
+						<li>
+						<p class="home-slide-content">
+							get to know about <strong>latest</strong> advances in agricultural field
+						</p>
+						</li>
+						<li>
+						<p class="home-slide-content">
+							<strong>save farmers</strong>
+						</p>
+						</li>
+					</ul>
+				</div>
+				<!-- end slider -->
+			</div>
+		</div>
+	</div>
+	</header>
+</div>
+
+<!-- section: team -->
+<section id="about" class="section">
+<div class="container">
+	<h4>Who We Are</h4>
+	<div class="row">
+		<div class="span4 offset1">
+			<div>
+				<h2>Hey there ! <strong> know about us :)</strong></h2>
+				<p>
+					We help farmers ensure greater profitability through direct farmer to supplier communication. Just register on this website as a farmer or retailer and start making deals the easy way.
+					Relax- be at home and do <strong>the real business</strong>
+					P.S. there are no middlemen involved here.
+				</p>
+			</div>
+		</div>
+		<div class="span6">
+			<div class="aligncenter">
+				<img src="{% static 'homepage/images/Green-Tea-Fields.jpg' %}" alt="" />
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<!--<div class="span2 offset1 flyIn">-->
+			<!--<div class="people">-->
+				<!--<img class="team-thumb img-circle" src="{% static 'homepage/images/team/img-1.jpg' %}" alt="" />-->
+				<!--<h3>padhavi</h3>-->
+				<!--<p>-->
+					<!--Admin-->
+				<!--</p>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="span2 flyIn">-->
+			<!--<div class="people">-->
+				<!--<img class="team-thumb img-circle" src="{% static 'homepage/images/team/img-2.jpg' %}" alt="" />-->
+				<!--<h3>Rashi</h3>-->
+				<!--<p>-->
+					<!--Web developer-->
+				<!--</p>-->
+			<!--</div>-->
+		<!--</div>-->
+		<div class="span2 flyIn">
+			<div class="people">
+				<img class="team-thumb img-circle" src="{% static 'homepage/images/team/img-3.jpg' %}" alt="" />
+				<h3>padhavi</h3>
+				<p>
+					Admin1
+				</p>
+			</div>
+		</div>
+		<div class="span2 flyIn">
+			<div class="people">
+				<img class="team-thumb img-circle" src="{% static 'homepage/images/team/img-4.jpg' %}" alt="" />
+				<h3>Rashi</h3>
+				<p>
+					Admin2.
+				</p>
+			</div>
+		</div>
+		<!--<div class="span2 flyIn">-->
+			<!--<div class="people">-->
+				<!--<img class="team-thumb img-circle" src="{% static 'homepage/images/team/img-5.jpg' %}" alt="" />-->
+				<!--<h3>padhavi rashi</h3>-->
+				<!--<p>-->
+					<!--Digital imaging-->
+				<!--</p>-->
+			<!--</div>-->
+		<!--</div>-->
+	</div>
+</div>
+<!-- /.container -->
+</section>
+<!-- end section: team -->
+<section id="services" class="section orange">
+<div class="container">
+	<h4>Services</h4>
+	<!-- Four columns -->
+	<div class="row">
+		<div class="span3 animated-fast flyIn">
+			<div class="service-box">
+				<img src="{% static 'homepage/images/sell.jpe' %}" style="height: 20%" alt="" />
+				<h2>Sell Crop</h2>
+				<p>
+					 Farmer can directly sell his goods to the Retailer.
+				</p>
+			</div>
+		</div>
+
+        <div class="span3 animated-fast flyIn">
+			<div class="service-box">
+				<img src="{% static 'homepage/images/retailer_posts_ad.jpg' %}" alt="" style="height: 20%"/>
+				<h2>Post Advertisement</h2>
+				<p>
+					 Retailer can post his Requirements as advertisements and farmer can accept or reject those requests.
+				</p>
+			</div>
+		</div>
+
+		<div class="span3 animated flyIn">
+			<div class="service-box">
+				<img src="{% static 'homepage/images/comp.jpg' %}" style="height: 20%" alt="" />
+				<h2>File Complain</h2>
+				<p>
+					 Both Farmer and Retailer can file complain regarding the services and admin will look through them.
+				</p>
+			</div>
+		</div>
+
+		<div class="span3 animated-slow flyIn">
+			<div class="service-box">
+				<img src="{% static 'homepage/images/free-farm-wallpaper.jpg' %}" style="height: 20%" alt="" />
+				<h2>Farmer Responses</h2>
+				<p>
+					 Retailer can view all the farmer responses every now and then.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<!-- end section: services -->
+
+
+<!-- section: blog -->
+<section id="news" class="section">
+<div class="container">
+	<h4>Current News</h4>
+	<!-- Three columns -->
+	<div class="row">
+		<div class="span3">
+			<div class="home-post">
+				<div class="post-image">
+					<img class="max-img" src="{% static 'homepage/images/another_rice_field_by_garki-d5yz59p.jpg' %}" alt="" />
+				</div>
+				<div class="post-meta">
+					<i class="icon-file icon-2x"></i>
+					<span class="date">June 19, 2013</span>
+
+				</div>
+				<div class="entry-content">
+					<h5><strong><a href="#"> The Beginning Farmer</a></strong></h5>
+					<p>
+						The Journey of a Beginning Farmer :: As a child I spent most of my life in town living with my mom, but whenever I visited my Dad and his side of the family it was on the farm.. &hellip;
+					</p>
+					<a href="http://thebeginningfarmer.blogspot.in/" class="more">Read more</a>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="home-post">
+				<div class="post-image">
+					<img class="max-img" src="{% static 'homepage/images/time.jpg' %}" alt="" />
+				</div>
+				<div class="post-meta">
+					<i class="icon-file icon-2x"></i>
+					<span class="date">april 19, 2013</span>
+
+				</div>
+				<div class="entry-content">
+					<h5><strong><a href="#">Northview Diary</a></strong></h5>
+					<p>
+						Around for nearly a decade, this farming blog waxes poetic about life on a dairy farm in New York. &hellip;
+					</p>
+					<a href="http://www.mnn.com/your-home/organic-farming-gardening/stories/11-fascinating-farm-blogs" class="more">Read more</a>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="home-post">
+				<div class="post-image">
+					<img class="max-img" src="{% static 'homepage/images/post_ad.jpeg' %}" alt="" />
+				</div>
+				<div class="post-meta">
+					<i class="icon-file icon-2x"></i>
+					<span class="date">June 22, 2016</span>
+
+				</div>
+				<div class="entry-content">
+					<h5><strong><a href="">Agriculture Proud</a></strong></h5>
+					<p>
+						Succession planning for farm and ranch businesses has been a popular topic for news stories and meeting workshops during recent…. &hellip;
+					</p>
+					<a href="https://agricultureproud.com/" class="more">Read more</a>
+				</div>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="home-post">
+				<div class="post-image">
+					<img class="max-img" src="{% static 'homepage/images/healthy-farm-bill.jpg' %}" alt="" />
+				</div>
+				<div class="post-meta">
+					<i class="icon-file icon-2x"></i>
+					<span class="date">May 7, 2017</span>
+
+				</div>
+				<div class="entry-content">
+					<h5><strong><a href="#">Podcast 027 – Raising Texas Cotton with Jeremy Brown</a></strong></h5>
+					<p>
+						Beyond the fence post also means that I must be involved. There are so many different aspects to agriculture. The… &hellip;
+					</p>
+					<a href="https://agricultureproud.com/2017/03/24/podcast-027-raising-texas-cotton-with-jeremy-brown/" class="more">Read more</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blankdivider30"></div>
+	<div class="aligncenter">
+		<a href="http://www.thefarmtable.com.au/farm-blogs/" class="btn btn-large btn-theme">More blog post</a>
+	</div>
+</div>
+</section>
+
+
+
+<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
+<script src="{% static 'homepage/js/jquery.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.scrollTo.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.nav.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.localscroll-1.2.7-min.js' %}"></script>
+<script src="{% static 'homepage/js/bootstrap.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.prettyPhoto.js' %}"></script>
+<script src="{% static 'homepage/js/isotope.js' %}"></script>
+<script src="{% static 'homepage/js/jquery.flexslider.js' %}"></script>
+<script src="{% static 'homepage/js/inview.js' %}"></script>
+<script src="{% static 'homepage/js/animate.js' %}"></script>
+<script src="{% static 'homepage/js/validate.js' %}"></script>
+<script src="{% static 'homepage/js/custom.js' %}"></script>
+<script src="{% static 'homepage/contactform/contactform.js' %}"></script>
+
+</body>
+</html>

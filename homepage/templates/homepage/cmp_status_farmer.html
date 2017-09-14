@@ -1,0 +1,67 @@
+
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'homepage/style.css' %}" rel="stylesheet">
+
+ <link href="{% static 'homepage/tablecss.css' %}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    .activee{
+        margin-left: 74%;
+    }
+</style>
+</head>
+
+<body  id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+<div class="topnav">
+    <a href="{% url 'farmer_dash' %}"> {{ user }}  </a>
+  <a class="activee" href="{% url 'farmerlogoutt' %}">Logout</a>
+ </div>
+ <div style="padding-right: 18px"></div>
+<section>
+  <!--for demo wrap-->
+  <h1>Farmer Complain BOX</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+
+          <th>USER</th>
+          <th>Complain</th>
+          <th>Status</th>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+    <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+          {% for p in posts %}
+        <tr>
+
+          <td>{{ p.user }}</td>
+          <td>{{ p.complain }}</td>
+          {%  if  p.status_update  == False %}
+          <td class="status">{{ p.status_update }}</td>
+          {% else %}
+          <td >{{ p.status_update }}</td>
+          {% endif %}
+        </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'homepage/style.css' %}" rel="stylesheet">
+ <link href="{% static 'homepage/styleregister.css' %}" rel="stylesheet">
+<style>
+    .activee{
+        margin-left: 64%;
+    }
+</style>
+</head>
+<body  id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
+<div class="topnav">
+  <a href="/index">Home</a>
+  <a class="activee">{{ user }}</a>
+ </div>
+ <div style="padding-right: 18px"></div>
+
+<div class="login-wrap">
+    <div class="login-html">
+
+        <input id="tab-2"  type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Farmer Form</label>
+
+        <div class="login-form">
+
+
+            <div class="sign-up-htm">
+                {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                {% endif %}
+
+            <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                <div class="group">
+                    {{ form.as_p }}
+                </div>
+
+
+                <div class="group">
+                    <input type="submit" class="button" value="submit">
+                </div>
+
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <label class="link">Welcome! please fill the above form. </label>
+                </div>
+
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

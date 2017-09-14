@@ -1,0 +1,130 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% comment %}<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">{% endcomment %}
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+     <link href="{% static 'homepage/style.css' %}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .activee{
+
+            margin-left: 62%;
+            color: white;
+
+        }
+         .w3-card-4{
+        {% comment %}background-color: #BDEDFF;{% endcomment %}
+        width: 340px;
+        height: 450px;
+        float:left;
+        margin-left: 5%;
+        position: relative;
+        margin-top: 5%;
+        box-shadow: 10px 10px 5px #1b6d85;
+    }
+.btn{
+    background-color: #1b6d85;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 10px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-left: 35%;
+
+
+
+}
+    .card-img-top{
+        width: 340px;
+       {% comment %} border-radius: 5px 5px 0 0;{% endcomment %}
+        height: 60%;
+
+
+    }
+    .card-title{
+        text-align: center;
+        font-family: "Aparajita";
+        font-size: xx-large;
+        color: #1b6d85;
+        margin-top: 2%;
+    }
+    </style>
+</head>
+
+
+
+{% block body %}
+
+
+
+
+
+
+<body id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60" >
+<div class="topnav">
+
+  <a> {{ user }}  </a>
+  <a class="activee" href="{% url 'farmerlogoutt' %}">Logout</a>
+ </div>
+ <div style="padding-right: 18px"></div>
+    <br>
+<div class="w3-card-4" >
+
+  <img class="card-img-top" src="{% static 'homepage/images/view_ads_sent_by_retailer.jpg' %}" alt="Avatar" alt="Card image cap">
+     <h4 class="card-title">Retailer Ads </h4>
+  <div class="card-block">
+
+
+  <button onclick="window.location.href='/crop_details_farmer'" type="button" type="button" class="btn">Ads</button>
+
+
+  </div>
+</div>
+
+<div class="w3-card-4" >
+
+  <img class="card-img-top" src="{% static 'homepage/images/c.jpg' %}" alt="Avatar"  alt="Card image cap">
+     <h4 class="card-title">Complain Section</h4>
+  <div class="card-block">
+
+
+  <button onclick="window.location.href='complain_page'" type="button" type="button" class="btn">complain</button>
+
+
+  </div>
+</div>
+
+
+<div class="w3-card-4" >
+
+  <img class="card-img-top" src="{% static 'homepage/images/berry.jpg' %}" alt="Avatar"  alt="Card image cap">
+     <h4 class="card-title">Sell Crop</h4>
+  <div class="card-block">
+
+   {% comment %} <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>{% endcomment %}
+       <button onclick="window.location.href='sell_crop'" type="button" type="button" class="btn">Sell</button>
+
+
+  </div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>
+
+
+
+

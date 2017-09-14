@@ -1,0 +1,90 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>complain: retailer</h1>-->
+
+
+<!--<br>-->
+<!--{% for p in posts %}-->
+
+<!--<ol> Complain : {{ p.complain }}</ol>-->
+
+<!--<ol> Status : {{ p.status_update }}</ol>-->
+<!--current user : {{p.user}}-->
+<!--{% endfor %}-->
+<!--<br>-->
+<!--<a href="{% url 'ret_complain_page' %}"> go back</a>-->
+<!--</body>-->
+<!--</html>-->
+
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{% static 'homepage/style.css' %}" rel="stylesheet">
+
+ <link href="{% static 'homepage/tablecss.css' %}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    .activee{
+        margin-left: 64%;
+    }
+</style>
+</head>
+
+<body  id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+<div class="topnav">
+  <a href="{% url 'retailer_dash' %}"> {{ user }}  </a>
+  <a class="activee" href="{% url 'retailerlogoutt' %}">Logout</a>
+ </div>
+ <div style="padding-right: 18px"></div>
+<section>
+  <!--for demo wrap-->
+  <h1>Retailer Complain BOX</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+
+          <th>USER</th>
+          <th>Complain</th>
+          <th>Status</th>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+    <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+          {% for p in posts %}
+        <tr>
+
+          <td>{{ p.user }}</td>
+          <td>{{ p.complain }}</td>
+          {%  if  p.status_update  == False %}
+          <td class="status">{{ p.status_update }}</td>
+          {% else %}
+          <td >{{ p.status_update }}</td>
+          {% endif %}
+        </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+</body>
+</html>
+
+

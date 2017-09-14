@@ -1,0 +1,128 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'homepage/style.css' %}" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="{% static 'homepage/css/bootstrap-responsive.css' %}" rel="stylesheet">
+<link href="{% static 'homepage/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'homepage/color/default.css' %}" rel="stylesheet">
+	<link href="{% static 'homepage/color/default.css' %}" rel="stylesheet">
+<link rel="shortcut icon" href="{% static 'homepage/images/favicon.ico' %}">
+
+    <style>
+          .activee{
+
+            margin-left: 64%;
+
+        }
+         .w3-card-4{
+        {% comment %}background-color: #F5F5DC;{% endcomment %}
+        width: 340px;
+        height: 450px;
+        float:left;
+        margin-left: 15%;
+        position: relative;
+        margin-top: 2%;
+        box-shadow: 10px 10px 5px #1b6d85;
+    }
+.btn{
+    background-color: #1b6d85;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 10px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-left: 35%;
+
+
+
+}
+    .card-img-top{
+        width: 340px;
+       {% comment %} border-radius: 5px 5px 0 0;{% endcomment %}
+        height: 60%;
+
+
+    }
+    .card-title{
+        text-align: center;
+        font-family: "Aparajita";
+        font-size: xx-large;
+        color: #1b6d85;
+        margin-top: 2%;
+    }
+          .activee{
+        margin-left: 84%;
+    }
+    </style>
+
+
+
+
+
+</head>
+<body id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
+<div class="topnav">
+<!--<div class="navbar-wrapper">-->
+
+<a href="{% url 'retailer_dash' %}" class="activee">{{ user }}</a>
+    <a class="activee" href="{% url 'retailerlogoutt' %}">Logout</a>
+
+<!--<p> u can check already posted complaints and post new complains farmer !!</p>-->
+</div>
+ <div style="padding-right: 18px"></div>
+    <br>
+<div class="w3-card-4" >
+
+  <img class="card-img-top" src="{% static 'homepage/images/blur.jpe' %}" alt="Avatar" alt="Card image cap">
+     <h4 class="card-title">complain</h4>
+  <div class="card-block">
+
+
+  <button onclick="window.location.href='/rcomplain'" type="button" type="button" class="btn">post</button>
+
+
+  </div>
+</div>
+
+<div class="w3-card-4" >
+
+  <img class="card-img-top" src="{% static 'homepage/images/blur.jpe' %}" alt="Avatar"  alt="Card image cap">
+     <h4 class="card-title"> status </h4>
+  <div class="card-block">
+
+
+  <button onclick="window.location.href='/cmp_status_retailer'" type="button" type="button" class="btn">view</button>
+
+
+  </div>
+</div>
+
+
+
+<!--<a href="{% url 'complain' %}">write ur complain here</a>-->
+<!--<a href="{% url 'cmp_status_farmer' %}">view complain status</a>-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--<a href="{% url 'rcomplain' %}">write ur complain here</a>-->
+<!--<a href="{% url 'cmp_status_retailer' %}">view complain status</a>-->
+

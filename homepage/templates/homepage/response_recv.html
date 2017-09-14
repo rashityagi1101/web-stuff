@@ -1,0 +1,174 @@
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link href="{% static 'homepage/tablecss.css' %}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body {
+       /* background-image: url("On-the-green-blurred-background.jpg");*/
+
+}
+
+.topnav{
+position: relative;
+/*left: 575px;
+margin-top: 50px;*/
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #1b6d85;
+}
+
+.topnav a {
+  float: left;
+
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 22px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.topnav a:hover {
+  background-color: #1b6d85 ;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #1b6d85;
+    color: white;
+}
+
+
+
+    .activee{
+        margin-left: 80%;
+    }
+</style>
+</head>
+
+<body  id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+<div class="topnav">
+     <a  href="{% url 'retailerlogoutt' %}">Logout</a>
+    <a class="activee" href="{% url 'retailer_dash' %}"> {{ user }}  </a>
+
+ </div>
+ <div style="padding-right: 18px"></div>
+<section>
+  <!--for demo wrap-->
+  <h1>Farmer Response</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+
+          <th>FARMER</th>
+          <th>CROPS</th>
+            <th>RETAILER</th>
+          <th>Qty</th>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+          {% for p in posts %}
+        <tr>
+
+          <td>{{ p.farmer_details }}</td>
+          <td>{{ p.crop_details }}</td>
+          <td>{{ p.retailer_details }}</td>
+          <td>{{ p.qty_sold_at }}</td>
+
+
+        </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<a href="{% url 'retailer_dash' %}"> go back</a>-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<br>-->
+<!--{% for p in posts %}-->
+<!--<p> sent by farmer : {{ p.farmer_details }}</p>-->
+
+<!--<ol> crop : {{ p.crop_details }}</ol>-->
+<!--<ol> to retailer : {{ p.retailer_details }}</ol>-->
+<!--<ol> qty details : {{ p.qty_sold_at }}</ol>-->
+<!--<br>-->
+<!--current retailer/user : {{p.retailer_details}}-->
+<!--{% endfor %}-->
+<!--<br>-->
+<!--<a href="{% url 'retailer_dash' %}"> go back</a>-->
+
+<!--</body>-->
+<!--</html>-->
